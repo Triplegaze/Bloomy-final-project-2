@@ -1,0 +1,26 @@
+# Python
+portfolio/venv/
+**/__pycache__/
+*.pyc
+
+# Java
+samplejavaapp/target/
+
+# Terraform
+terraform/.terraform/
+**/.terraform/
+terraform/*.tfstate
+terraform/*.tfstate.*
+terraform/.terraform.lock.hcl
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Secrets
+*.pem
+.env

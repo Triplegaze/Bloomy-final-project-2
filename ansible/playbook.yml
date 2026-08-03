@@ -1,0 +1,9 @@
+---
+- name: Configure EC2 server
+  hosts: web
+  become: true
+
+  roles:
+    - { role: common, tags: ["common"] }
+    - { role: docker, tags: ["docker"] }
+    - { role: deploy, tags: ["deploy"] }

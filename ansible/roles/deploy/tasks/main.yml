@@ -1,0 +1,20 @@
+---
+- name: Create application directory
+  file:
+    path: /opt/bloomy-final-project
+    state: directory
+    owner: ubuntu
+    group: ubuntu
+    mode: '0755'
+
+- name: Clone GitHub repository
+  git:
+    repo: "https://github.com/Triplegaze/Bloomy-final-project.git"
+    dest: /opt/bloomy-final-project
+    version: main
+    force: yes
+
+- name: Build and start containers
+  command:
+    cmd: docker compose up -d --build
+    chdir: /opt/bloomy-final-project
