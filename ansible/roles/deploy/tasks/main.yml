@@ -1,4 +1,5 @@
 ---
+
 - name: Create application directory
   file:
     path: /opt/bloomy-final-project
@@ -9,10 +10,23 @@
 
 - name: Clone GitHub repository
   git:
-    repo: "https://github.com/Triplegaze/Bloomy-final-project.git"
+    repo: "https://github.com/Triplegaze/Bloomy-final-project-2.git"
     dest: /opt/bloomy-final-project
     version: main
     force: yes
+
+- name: Check deployed files
+  command: ls -la /opt/bloomy-final-project
+  register: deployed_files
+
+- name: Show deployed files
+  debug:
+    var: deployed_files.stdout_lines
+
+- name: Build Java application
+  command: mvn clean package
+  args:
+    chdir: /opt/bloomy-final-project/samplejavaapp
 
 - name: Build and start containers
   command:
