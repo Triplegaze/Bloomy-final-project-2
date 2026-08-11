@@ -1,5 +1,5 @@
 [web]
-your-ec2 ansible_host=3.239.214.165 ansible_user=ubuntu ansible_user=ubuntu ansible_ssh_private_key_file=~/dampscodekp.pem
+your-ec2 ansible_host=3.239.214.165 ansible_user=ubuntu
 
 [jenkins]
 jenkins-ec2 ansible_host=100.54.10.52 ansible_user=ubuntu ansible_ssh_private_key_file=~/dampscodekp.pem
